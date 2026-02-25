@@ -1,0 +1,254 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Youth Entrepreneur Empowerment Program — Village India Platform Frontend",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "summary": "Create a Home/Landing page introducing the Youth Entrepreneur Empowerment Program mission with clear call-to-action and navigation",
+      "acceptanceCriteria": [
+        "Landing page displays the program mission and vision clearly in English",
+        "A prominent 'Register as Entrepreneur' button is visible",
+        "Navigation links to all major sections (Register, Community, Resources, Stories, Dashboard) are present",
+        "Page renders the generated hero banner image as the main visual"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create the landing page component displaying the program mission ('discovering, equipping, motivating, and connecting young entrepreneurs across every village and panchayat in India'), featuring the hero banner image from frontend/public/assets/generated/hero-banner.dim_1440x600.png, a prominent 'Register as Entrepreneur' button, and overview cards introducing the platform's four pillars (Find, Equip, Motivate, Connect). Apply the saffron-green-offwhite theme with bold typography."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for HomePage at '/' path and wire navigation links to all major sections: Register (/register), Community (/community), Resources (/resources), Stories (/stories), and Dashboard (/dashboard). Ensure HomePage is the default landing route."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create a shared layout component with consistent header (navigation menu to all sections), footer, and main content area. Apply the saffron, deep green, and off-white color scheme with bold typography. Include site logo and navigation links to Register, Directory, Dashboard, Resources, Stories, and Community pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Create an Entrepreneur Registration page with multi-field form that submits to backend and shows success confirmation",
+      "acceptanceCriteria": [
+        "All required fields are validated before submission",
+        "Dropdown options are provided for category and state",
+        "Successful registration shows a confirmation message",
+        "Form is mobile-responsive"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/RegisterPage.tsx",
+          "operation": "create",
+          "description": "Create registration page with a form collecting: full name, age (number), gender (dropdown: male/female/other), village name, panchayat name, district, state (dropdown with Indian states), contact info, business category (dropdown: agriculture/food/environment/sustainability/other), skills (multi-input), and bio (textarea). Validate all required fields before calling backend.registerEntrepreneur(). Display success confirmation on successful submission. Make form mobile-responsive using the saffron-green-offwhite theme."
+        },
+        {
+          "path": "frontend/src/hooks/useEntrepreneurRegistration.ts",
+          "operation": "create",
+          "description": "Create hook for entrepreneur registration that calls backend.registerEntrepreneur() with the Entrepreneur type from backend.d.ts. Handle form submission state (loading, success, error). Return submit handler and state values for UI feedback."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for RegisterPage at '/register' path and ensure it is accessible from the navigation menu in the Layout component."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create an Entrepreneur Directory page listing registered entrepreneurs with filters and profile detail view",
+      "acceptanceCriteria": [
+        "Directory shows a paginated or scrollable list of entrepreneurs",
+        "Filter controls work and update the list in real time",
+        "Entrepreneur profile page shows all stored fields",
+        "Empty state is displayed when no results match filters"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/DirectoryPage.tsx",
+          "operation": "create",
+          "description": "Create directory page that calls backend.listEntrepreneurs() and displays results in a card grid showing name, village, panchayat, and business category. Include filter controls for state, district, panchayat, and category (BusinessCategory enum). Implement client-side filtering that updates the displayed list in real-time. Show empty state when no results match. Each card links to the entrepreneur's profile page. Apply theme styling."
+        },
+        {
+          "path": "frontend/src/pages/EntrepreneurProfilePage.tsx",
+          "operation": "create",
+          "description": "Create entrepreneur profile page that retrieves a single entrepreneur by ID using backend.getEntrepreneur() and displays all fields: full name, age, gender, village, panchayat, district, state, contact info, business category, skills array, and bio. Use card layout with sections for personal info, location, business, and skills. Apply theme styling."
+        },
+        {
+          "path": "frontend/src/hooks/useEntrepreneurs.ts",
+          "operation": "create",
+          "description": "Create hook that fetches the entrepreneur list via backend.listEntrepreneurs() and provides filtering logic for state, district, panchayat, and category. Return filtered list, loading state, and error state."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routes for DirectoryPage at '/directory' and EntrepreneurProfilePage at '/entrepreneur/:id'. Wire DirectoryPage into the navigation menu."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Create a Village/Panchayat Dashboard displaying entrepreneur counts per panchayat with progress indicators and category breakdowns",
+      "acceptanceCriteria": [
+        "Dashboard lists panchayats with their entrepreneur counts",
+        "A progress bar or indicator shows progress toward 1000 entrepreneurs",
+        "Category breakdown is visible per panchayat",
+        "Dashboard updates based on live backend data"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/DashboardPage.tsx",
+          "operation": "create",
+          "description": "Create dashboard page that calls backend.listEntrepreneurs() and groups entrepreneurs by panchayat. Display each panchayat with its total count, a progress bar showing progress toward 1000 entrepreneurs, and a category breakdown (agriculture, food, environment, sustainability, other) using the BusinessCategory enum. Render the village mosaic image from frontend/public/assets/generated/village-mosaic.dim_800x400.png at the top of the dashboard. Use card layout and apply theme styling with saffron-green-offwhite colors."
+        },
+        {
+          "path": "frontend/src/hooks/useDashboardStats.ts",
+          "operation": "create",
+          "description": "Create hook that fetches backend.listEntrepreneurs() and aggregates data by panchayat: total count, category breakdown, and progress percentage toward 1000. Return aggregated stats, loading state, and error state."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for DashboardPage at '/dashboard' and ensure it is accessible from the navigation menu."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Create a Training & Resources page listing guides, courses, and tools with category filters",
+      "acceptanceCriteria": [
+        "Resources are listed with filter tabs for category and type",
+        "Each card displays all required fields",
+        "Clicking a resource opens its content or external URL"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ResourcesPage.tsx",
+          "operation": "create",
+          "description": "Create resources page that calls backend.listTrainingResources() and displays resources as cards showing title, resource type (ResourceType enum: course/guide/tool/video), description, and category (ResourceCategory enum: agriculture/food/environment/sustainability/general). Include filter tabs for category and type that update the displayed list. Each card links to the resource URL or displays content inline. Show empty state when no resources match filters. Apply theme styling."
+        },
+        {
+          "path": "frontend/src/hooks/useTrainingResources.ts",
+          "operation": "create",
+          "description": "Create hook that fetches backend.listTrainingResources() and provides filtering logic by ResourceCategory and ResourceType. Return filtered list, loading state, and error state."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for ResourcesPage at '/resources' and ensure it is accessible from the navigation menu."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Create a Motivation Hub page displaying success stories with filters and detail view",
+      "acceptanceCriteria": [
+        "Success stories are listed sorted by most recent",
+        "Category and village filter options are available",
+        "Each story card shows author, village, category, excerpt, and date",
+        "Full story is viewable on click"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/StoriesPage.tsx",
+          "operation": "create",
+          "description": "Create stories page with an inspiring headline section at the top. Call backend.listSuccessStories() and display stories sorted by date descending. Show each story as a card with author name, village, category (BusinessCategory enum), content excerpt (first 150 characters), and formatted date. Include filter controls for category and village. Clicking a story opens the full story detail view. Apply theme styling with saffron-green-offwhite colors."
+        },
+        {
+          "path": "frontend/src/pages/StoryDetailPage.tsx",
+          "operation": "create",
+          "description": "Create story detail page that displays a single success story with full content, title, author name, village, category, and date. Use card layout with typography that emphasizes the inspirational nature of the content. Apply theme styling."
+        },
+        {
+          "path": "frontend/src/hooks/useSuccessStories.ts",
+          "operation": "create",
+          "description": "Create hook that fetches backend.listSuccessStories(), sorts by date descending, and provides filtering by category and village. Return filtered and sorted list, loading state, and error state."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routes for StoriesPage at '/stories' and StoryDetailPage at '/story/:id'. Wire StoriesPage into the navigation menu."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Create a Community Connect page with a message board and post submission form",
+      "acceptanceCriteria": [
+        "Community board displays posts in reverse-chronological order",
+        "Post submission form requires name, village, category, and message",
+        "Posts can be filtered by category and panchayat",
+        "New posts appear immediately after submission"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CommunityPage.tsx",
+          "operation": "create",
+          "description": "Create community page that calls backend.listCommunityPosts() to display posts in reverse-chronological order (sorted by timestamp descending). Show each post with author name, village, category (BusinessCategory enum), timestamp (formatted), and message content. Include a post submission form at the top collecting: author name, village, panchayat, category (dropdown), and message (textarea). On submit, call backend.addCommunityPost() and refresh the list. Include filter controls for category and panchayat. Apply theme styling."
+        },
+        {
+          "path": "frontend/src/hooks/useCommunityPosts.ts",
+          "operation": "create",
+          "description": "Create hook that fetches backend.listCommunityPosts(), sorts by timestamp descending, and provides filtering by category and panchayat. Include a submitPost function that calls backend.addCommunityPost() and refreshes the list. Return filtered posts, submit handler, loading state, and error state."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for CommunityPage at '/community' and ensure it is accessible from the navigation menu."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Apply a vibrant, earthy, and energetic visual theme inspired by rural India across the entire frontend",
+      "acceptanceCriteria": [
+        "Saffron, deep green, and off-white color scheme is used consistently site-wide",
+        "Typography is bold and readable across all screen sizes",
+        "All pages share a consistent header, footer, and navigation style",
+        "Theme evokes rural empowerment and national pride without being clichéd"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define custom CSS variables for the saffron-green-offwhite color palette in :root. Set primary color to warm saffron (#FF9933), secondary color to deep green (#138808), background to off-white (#FFF8F0), and define accent colors. Apply bold, readable typography using system fonts or a web-safe bold font stack. Ensure the theme is consistent, empowering, and grassroots-inspired across all components."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend the Tailwind theme with custom colors matching the saffron-green-offwhite palette: primary (saffron #FF9933), secondary (deep green #138808), background (off-white #FFF8F0), and accent colors. Configure bold font weights and responsive typography scales. Ensure consistency with the energetic, earthy visual identity."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Apply the saffron-green-offwhite theme to the Layout component header, footer, and navigation. Use bold typography for headings and menu items. Ensure the header and footer are consistent across all pages and reinforce the rural empowerment and national pride aesthetic without being clichéd."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Render generated hero banner and village mosaic images on landing and dashboard pages",
+      "acceptanceCriteria": [
+        "Hero banner is displayed prominently at the top of the landing page",
+        "Village mosaic image is displayed on the Dashboard page",
+        "Images load correctly from frontend/public/assets/generated",
+        "Images are responsive and do not break layout on mobile"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Wire the generated hero banner image from frontend/public/assets/generated/hero-banner.dim_1440x600.png into the HomePage component as the main visual element at the top. Use an <img> tag or CSS background with responsive sizing. Ensure the image loads correctly and scales properly on mobile devices without breaking the layout."
+        },
+        {
+          "path": "frontend/src/pages/DashboardPage.tsx",
+          "operation": "modify",
+          "description": "Wire the generated village mosaic image from frontend/public/assets/generated/village-mosaic.dim_800x400.png into the DashboardPage component near the top to reinforce the rural India context. Use responsive image sizing and ensure it integrates visually with the panchayat statistics below. Confirm the image loads correctly on all screen sizes."
+        }
+      ]
+    }
+  ]
+}

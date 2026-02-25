@@ -1,0 +1,5 @@
+{
+  "frontend/src/pages/CommunityPage.tsx": "Complete community board page with a sticky post submission form (name, village, panchayat, category, message) and a filterable feed of community posts displayed in reverse-chronological order with category badges and timestamps.",
+  "frontend/src/pages/DirectoryPage.tsx": "Entrepreneur directory page with search and multi-filter controls; fixes the TanStack Router Link type error by using `to=\"/entrepreneur/$id\"` with `params={{ id }}` instead of a template literal.",
+  "frontend/src/pages/StoriesPage.tsx": "Success stories listing page with category and village filters; fixes the TanStack Router Link type error by using `to=\"/story/$id\"` with `params={{ id }}` instead of a template literal."
+}

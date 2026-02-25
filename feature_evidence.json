@@ -1,0 +1,180 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-home-landing-page-that-introduces-the-youth-entrepreneur-empowerment-program-mission-discovering-equipping-motivating-and-connecting-young-entrepreneurs-across-every-village-and-panchayat-in-india-with-a-clear-call-to-action-to-register-as-an-entrepreneur-or-explore-the-platform",
+      "featureTitle": "Create a Home/Landing page that introduces the Youth Entrepreneur Empowerment Program mission — discovering, equipping, motivating, and connecting young entrepreneurs across every village and panchayat in India — with a clear call to action to register as an entrepreneur or explore the platform.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-an-entrepreneur-registration-page-with-a-multi-field-form-name-age-gender-village-panchayat-district-state-category-of-business-idea-skills-bio-contact-on-submission-call-the-backend-to-save-the-record-and-show-a-success-confirmation",
+      "featureTitle": "Create an Entrepreneur Registration page with a multi-field form (name, age, gender, village, panchayat, district, state, category of business idea, skills, bio, contact). On submission, call the backend to save the record and show a success confirmation.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/RegisterPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-an-entrepreneur-directory-browse-page-that-lists-registered-entrepreneurs-with-their-name-village-panchayat-and-business-category-include-filters-for-state-district-panchayat-and-category-clicking-an-entrepreneur-opens-their-full-profile",
+      "featureTitle": "Create an Entrepreneur Directory/Browse page that lists registered entrepreneurs with their name, village, panchayat, and business category. Include filters for state, district, panchayat, and category. Clicking an entrepreneur opens their full profile.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/DirectoryPage.tsx",
+        "frontend/src/pages/EntrepreneurProfilePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-village-panchayat-dashboard-page-that-displays-each-panchayat-with-its-registered-entrepreneur-count-and-a-visual-progress-indicator-toward-the-100-1000-target-show-category-breakdowns-agriculture-food-environment-sustainability-per-panchayat",
+      "featureTitle": "Create a Village/Panchayat Dashboard page that displays each panchayat with its registered entrepreneur count and a visual progress indicator toward the 100–1000 target. Show category breakdowns (agriculture, food, environment, sustainability) per panchayat.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/DashboardPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-training-resources-page-listing-available-guides-courses-and-tools-filtered-by-category-agriculture-food-security-environment-sustainability-general-entrepreneurship-each-resource-card-shows-title-type-description-and-a-link-or-read-more-action",
+      "featureTitle": "Create a Training & Resources page listing available guides, courses, and tools filtered by category (agriculture/food security, environment/sustainability, general entrepreneurship). Each resource card shows title, type, description, and a link or read-more action.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/ResourcesPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-motivation-hub-page-displaying-success-stories-of-entrepreneurs-from-across-indian-villages-with-author-name-village-category-story-content-and-date-include-an-inspiring-headline-section-at-the-top",
+      "featureTitle": "Create a Motivation Hub page displaying success stories of entrepreneurs from across Indian villages, with author name, village, category, story content, and date. Include an inspiring headline section at the top.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/StoriesPage.tsx",
+        "frontend/src/pages/StoryDetailPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-community-connect-page-where-entrepreneurs-can-post-messages-questions-or-collaboration-requests-display-the-community-board-with-posts-showing-author-name-village-category-timestamp-and-message-include-a-post-submission-form",
+      "featureTitle": "Create a Community Connect page where entrepreneurs can post messages, questions, or collaboration requests. Display the community board with posts showing author name, village, category, timestamp, and message. Include a post submission form.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/CommunityPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-vibrant-earthy-and-energetic-visual-theme-across-the-entire-frontend-inspired-by-rural-india-with-modern-ambition-use-warm-saffron-deep-green-and-off-white-as-the-primary-palette-with-bold-typography-the-design-should-feel-empowering-grassroots-and-optimistic-consistently-applied-across-all-pages-and-components",
+      "featureTitle": "Apply a vibrant, earthy, and energetic visual theme across the entire frontend — inspired by rural India with modern ambition. Use warm saffron, deep green, and off-white as the primary palette with bold typography. The design should feel empowering, grassroots, and optimistic, consistently applied across all pages and components.",
+      "files": [
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-the-generated-hero-banner-image-hero-banner-dim-1440x600-png-on-the-landing-page-as-the-main-visual-and-the-village-mosaic-image-village-mosaic-dim-800x400-png-on-the-dashboard-page-to-reinforce-the-rural-india-context-store-both-in-frontend-public-assets-generated",
+      "featureTitle": "Render the generated hero banner image (hero-banner.dim_1440x600.png) on the landing page as the main visual, and the village mosaic image (village-mosaic.dim_800x400.png) on the Dashboard page to reinforce the rural India context. Store both in frontend/public/assets/generated.",
+      "files": [
+        "frontend/src/pages/DashboardPage.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

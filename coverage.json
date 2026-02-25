@@ -1,0 +1,286 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T17:20:26.945Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 13,
+    "implemented": 9,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Build a backend data model and API for entrepreneur registration, storing: full name, age, gender, village name, panchayat name, district, state, contact info, business idea/category (agriculture, food, environment, sustainability, other), skills, and a short bio. Support create, read, update, and list operations.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-10",
+        "summary": "Create a Motivation Hub page displaying success stories of entrepreneurs from across Indian villages, with author name, village, category, story content, and date. Include an inspiring headline section at the top.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/StoriesPage.tsx",
+          "frontend/src/pages/StoryDetailPage.tsx",
+          "frontend/src/hooks/useSuccessStories.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/StoriesPage.tsx",
+          "frontend/src/pages/StoryDetailPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Create a Community Connect page where entrepreneurs can post messages, questions, or collaboration requests. Display the community board with posts showing author name, village, category, timestamp, and message. Include a post submission form.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/CommunityPage.tsx",
+          "frontend/src/hooks/useCommunityPosts.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/CommunityPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Apply a vibrant, earthy, and energetic visual theme across the entire frontend — inspired by rural India with modern ambition. Use warm saffron, deep green, and off-white as the primary palette with bold typography. The design should feel empowering, grassroots, and optimistic, consistently applied across all pages and components.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/Layout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/Layout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Render the generated hero banner image (hero-banner.dim_1440x600.png) on the landing page as the main visual, and the village mosaic image (village-mosaic.dim_800x400.png) on the Dashboard page to reinforce the rural India context. Store both in frontend/public/assets/generated.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/DashboardPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/DashboardPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Build a backend data model for success stories and motivational content, allowing admins to post entries with a title, content body, author/entrepreneur name, village, category tag, and date. Support create and list operations.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Build a backend data model for training resources and guides, storing: title, description, resource type (course, guide, tool, video), category (agriculture, food, environment, sustainability, general), and a URL or content body. Support create and list operations.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Build a backend data model for a community connection/networking board, where entrepreneurs can post messages, questions, or collaboration requests tagged with their village, panchayat, category, and a timestamp. Support create and list operations.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Create a Home/Landing page that introduces the Youth Entrepreneur Empowerment Program mission — discovering, equipping, motivating, and connecting young entrepreneurs across every village and panchayat in India — with a clear call to action to register as an entrepreneur or explore the platform.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Layout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Layout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Create an Entrepreneur Registration page with a multi-field form (name, age, gender, village, panchayat, district, state, category of business idea, skills, bio, contact). On submission, call the backend to save the record and show a success confirmation.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/RegisterPage.tsx",
+          "frontend/src/hooks/useEntrepreneurRegistration.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/RegisterPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Create an Entrepreneur Directory/Browse page that lists registered entrepreneurs with their name, village, panchayat, and business category. Include filters for state, district, panchayat, and category. Clicking an entrepreneur opens their full profile.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/DirectoryPage.tsx",
+          "frontend/src/pages/EntrepreneurProfilePage.tsx",
+          "frontend/src/hooks/useEntrepreneurs.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/DirectoryPage.tsx",
+          "frontend/src/pages/EntrepreneurProfilePage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Create a Village/Panchayat Dashboard page that displays each panchayat with its registered entrepreneur count and a visual progress indicator toward the 100–1000 target. Show category breakdowns (agriculture, food, environment, sustainability) per panchayat.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/DashboardPage.tsx",
+          "frontend/src/hooks/useDashboardStats.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/DashboardPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Create a Training & Resources page listing available guides, courses, and tools filtered by category (agriculture/food security, environment/sustainability, general entrepreneurship). Each resource card shows title, type, description, and a link or read-more action.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ResourcesPage.tsx",
+          "frontend/src/hooks/useTrainingResources.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ResourcesPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/hero-banner.dim_1440x600.png",
+    "frontend/public/assets/generated/program-logo.dim_256x256.png",
+    "frontend/public/assets/generated/village-mosaic.dim_800x400.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/CommunityPage.tsx",
+    "frontend/src/pages/DashboardPage.tsx",
+    "frontend/src/pages/DirectoryPage.tsx",
+    "frontend/src/pages/EntrepreneurProfilePage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/RegisterPage.tsx",
+    "frontend/src/pages/ResourcesPage.tsx",
+    "frontend/src/pages/StoriesPage.tsx",
+    "frontend/src/pages/StoryDetailPage.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

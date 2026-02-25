@@ -1,0 +1,106 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T17:20:26.942Z",
+  "summary": "The diff implements most of the required functionality across backend and frontend. All 13 requirements have substantial implementation. However, a few specific acceptance criteria appear missing or incomplete: the backend lacks an explicit update operation for entrepreneurs (REQ-1), the backend lacks server-side filtering functions (REQ-1, REQ-2, REQ-3, REQ-4), the community post data model stores a Principal for author rather than an author name string (REQ-4), and the directory page appears to lack a panchayat filter (REQ-7). Internet Identity is included despite being a stated non-goal.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Support update operation for entrepreneur profiles",
+      "reason": "The backend main.mo only shows registerEntrepreneur (create), getEntrepreneur (read), and listEntrepreneurs (list). No update function is visible in the diff.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-1",
+      "requirement": "Entrepreneurs can be filtered by village, panchayat, district, state, and category; total entrepreneur count per village/panchayat is queryable via a dedicated backend function",
+      "reason": "The backend exposes only listEntrepreneurs() with no filter parameters. Filtering is done client-side only. No dedicated backend query for count per village/panchayat is visible.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/pages/DirectoryPage.tsx",
+        "frontend/src/pages/DashboardPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Stories can be filtered by category and village at the backend level",
+      "reason": "The backend listSuccessStories() returns all stories with no filter parameters. Filtering by category and village is only done client-side in StoriesPage.tsx.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/pages/StoriesPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "Resources can be filtered by type and category at the backend level",
+      "reason": "The backend listTrainingResources() has no filter parameters; filtering is done entirely client-side in ResourcesPage.tsx.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/pages/ResourcesPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Each community post shows author name; posts can be filtered by village, panchayat, and category",
+      "reason": "The CommunityPost type stores an author Principal rather than an author name string, so the author name is not directly stored. Backend-level filtering is also absent.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/pages/CommunityPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "Directory filter controls include a panchayat filter",
+      "reason": "DirectoryPage.tsx implements filters for state, district, and category plus a search box, but no dedicated panchayat filter dropdown is visible in the diff.",
+      "evidence": [
+        "frontend/src/pages/DirectoryPage.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "InternetIdentityProvider and full Internet Identity authentication flow are included and wrap the entire app",
+      "reason": "The build request explicitly lists Internet Identity or user authentication as a non-goal for this initial build, yet a full II auth provider, useInternetIdentity hook, and identity-aware actor creation are implemented.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "A separate StoryDetailPage with a dedicated /story/$id route is implemented",
+      "reason": "REQ-10 only states 'Full story is viewable on click' without explicitly requesting a separate detail page and route. This is an extra implementation beyond what was strictly specified.",
+      "evidence": [
+        "frontend/src/pages/StoryDetailPage.tsx",
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/CommunityPage.tsx",
+    "frontend/src/pages/DashboardPage.tsx",
+    "frontend/src/pages/DirectoryPage.tsx",
+    "frontend/src/pages/EntrepreneurProfilePage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/RegisterPage.tsx",
+    "frontend/src/pages/ResourcesPage.tsx",
+    "frontend/src/pages/StoriesPage.tsx",
+    "frontend/src/pages/StoryDetailPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

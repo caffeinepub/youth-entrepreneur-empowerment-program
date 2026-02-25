@@ -1,0 +1,273 @@
+{
+  "kind": "build_request",
+  "title": "Youth Entrepreneur Empowerment Program — Village India Platform",
+  "projectName": "VillagePreneurs India",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Build a backend data model and API for entrepreneur registration, storing: full name, age, gender, village name, panchayat name, district, state, contact info, business idea/category (agriculture, food, environment, sustainability, other), skills, and a short bio. Support create, read, update, and list operations.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "find young enterperuners through each and every willage in india",
+          "100 to 1000 enterperuners in every village"
+        ]
+      },
+      "acceptanceCriteria": [
+        "An entrepreneur can be registered with all required fields",
+        "Entrepreneurs can be listed and filtered by village, panchayat, district, state, and category",
+        "Each entrepreneur has a unique ID and profile retrievable by ID",
+        "Total entrepreneur count per village/panchayat is queryable"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build a backend data model for success stories and motivational content, allowing admins to post entries with a title, content body, author/entrepreneur name, village, category tag, and date. Support create and list operations.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "motivate them"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Success stories can be created with all required fields",
+        "Stories can be listed sorted by date descending",
+        "Stories can be filtered by category and village"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build a backend data model for training resources and guides, storing: title, description, resource type (course, guide, tool, video), category (agriculture, food, environment, sustainability, general), and a URL or content body. Support create and list operations.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "eqipe them"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Resources can be created and listed",
+        "Resources can be filtered by type and category"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a backend data model for a community connection/networking board, where entrepreneurs can post messages, questions, or collaboration requests tagged with their village, panchayat, category, and a timestamp. Support create and list operations.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "connact them to be a enterperuer"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Community posts can be created and listed",
+        "Posts can be filtered by village, panchayat, and category",
+        "Each post shows author name, village, and timestamp"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create a Home/Landing page that introduces the Youth Entrepreneur Empowerment Program mission — discovering, equipping, motivating, and connecting young entrepreneurs across every village and panchayat in India — with a clear call to action to register as an entrepreneur or explore the platform.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "empower them and eqipe them and motivate them and connact them",
+          "change the face oof nation and feed the world and prtact the enrvimnet"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Landing page displays the program mission and vision clearly in English",
+        "A prominent 'Register as Entrepreneur' button is visible",
+        "Navigation links to all major sections (Register, Community, Resources, Stories, Dashboard) are present",
+        "Page renders the generated hero banner image as the main visual"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create an Entrepreneur Registration page with a multi-field form (name, age, gender, village, panchayat, district, state, category of business idea, skills, bio, contact). On submission, call the backend to save the record and show a success confirmation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "find young enterperuners through each and every willage in india"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All required fields are validated before submission",
+        "Dropdown options are provided for category and state",
+        "Successful registration shows a confirmation message",
+        "Form is mobile-responsive"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create an Entrepreneur Directory/Browse page that lists registered entrepreneurs with their name, village, panchayat, and business category. Include filters for state, district, panchayat, and category. Clicking an entrepreneur opens their full profile.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "100 to 1000 enterperuners in every village"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Directory shows a paginated or scrollable list of entrepreneurs",
+        "Filter controls work and update the list in real time",
+        "Entrepreneur profile page shows all stored fields",
+        "Empty state is displayed when no results match filters"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create a Village/Panchayat Dashboard page that displays each panchayat with its registered entrepreneur count and a visual progress indicator toward the 100–1000 target. Show category breakdowns (agriculture, food, environment, sustainability) per panchayat.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "100 to 1000 enterperuners in every village",
+          "change the face oof nation"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard lists panchayats with their entrepreneur counts",
+        "A progress bar or indicator shows progress toward 1000 entrepreneurs",
+        "Category breakdown is visible per panchayat",
+        "Dashboard updates based on live backend data"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Create a Training & Resources page listing available guides, courses, and tools filtered by category (agriculture/food security, environment/sustainability, general entrepreneurship). Each resource card shows title, type, description, and a link or read-more action.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "eqipe them",
+          "feed the world and prtact the enrvimnet"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Resources are listed with filter tabs for category and type",
+        "Each card displays all required fields",
+        "Clicking a resource opens its content or external URL"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Create a Motivation Hub page displaying success stories of entrepreneurs from across Indian villages, with author name, village, category, story content, and date. Include an inspiring headline section at the top.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "motivate them"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Success stories are listed sorted by most recent",
+        "Category and village filter options are available",
+        "Each story card shows author, village, category, excerpt, and date",
+        "Full story is viewable on click"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Create a Community Connect page where entrepreneurs can post messages, questions, or collaboration requests. Display the community board with posts showing author name, village, category, timestamp, and message. Include a post submission form.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "connact them to be a enterperuer in each pachaythu"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Community board displays posts in reverse-chronological order",
+        "Post submission form requires name, village, category, and message",
+        "Posts can be filtered by category and panchayat",
+        "New posts appear immediately after submission"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Apply a vibrant, earthy, and energetic visual theme across the entire frontend — inspired by rural India with modern ambition. Use warm saffron, deep green, and off-white as the primary palette with bold typography. The design should feel empowering, grassroots, and optimistic, consistently applied across all pages and components.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "change the face oof nation and feed the world and prtact the enrvimnet"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Saffron, deep green, and off-white color scheme is used consistently site-wide",
+        "Typography is bold and readable across all screen sizes",
+        "All pages share a consistent header, footer, and navigation style",
+        "Theme evokes rural empowerment and national pride without being clichéd"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Render the generated hero banner image (hero-banner.dim_1440x600.png) on the landing page as the main visual, and the village mosaic image (village-mosaic.dim_800x400.png) on the Dashboard page to reinforce the rural India context. Store both in frontend/public/assets/generated.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero banner is displayed prominently at the top of the landing page",
+        "Village mosaic image is displayed on the Dashboard page",
+        "Images load correctly from frontend/public/assets/generated",
+        "Images are responsive and do not break layout on mobile"
+      ]
+    }
+  ],
+  "constraints": [
+    "All backend logic must remain in a single Motoko actor in backend/main.mo",
+    "Do not use any external databases or cloud services",
+    "Do not modify any files listed in frontend.immutablePaths",
+    "Use English for all user-facing text"
+  ],
+  "nonGoals": [
+    "Real-time chat or WebSocket-based messaging",
+    "Internet Identity or user authentication in this initial build",
+    "Payment processing or financial features",
+    "Integration with government or external APIs",
+    "Mobile app (React Native or Flutter)",
+    "Map or GPS-based geolocation features"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Wide panoramic hero banner: vibrant rural Indian village landscape at sunrise with young people working, farming, and collaborating, saffron and green color tones, warm and uplifting mood (hero-banner.dim_1440x600.png)",
+      "Mosaic collage of colorful Indian village scenes: fields, markets, small workshops, community gatherings, warm earthy tones (village-mosaic.dim_800x400.png)",
+      "Bold circular emblem logo with a rising sun over a green field and silhouette of a young entrepreneur, saffron and green palette (program-logo.dim_256x256.png)"
+    ],
+    "edits": []
+  }
+}
